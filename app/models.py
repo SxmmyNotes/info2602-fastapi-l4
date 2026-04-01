@@ -1,17 +1,24 @@
 from sqlmodel import Field, SQLModel, Relationship
 from typing import Optional
+<<<<<<< HEAD
 from pydantic import EmailStr
 from typing import List
+=======
+from pydantic import EmailStr   #insert at top of the file
+>>>>>>> 8431d0e52179f66a64821b3f2b7168e26937b400
 
 class Token(SQLModel):
     access_token: str
     token_type: str
 
+<<<<<<< HEAD
 class UserCreate(SQLModel):
     username:str
     email: EmailStr 
     password: str = Field(min_length=8, max_length=128)
 
+=======
+>>>>>>> 8431d0e52179f66a64821b3f2b7168e26937b400
 class UserResponse(SQLModel):
     id: Optional[int]
     username:str
@@ -20,7 +27,11 @@ class UserResponse(SQLModel):
 class User(SQLModel, table=False):
     id: Optional[int] = Field(default=None, primary_key=True)
     username: str = Field(index=True, unique=True)
+<<<<<<< HEAD
     email: EmailStr = Field(index=True, unique=True)
+=======
+    email: str = Field(index=True, unique=True)
+>>>>>>> 8431d0e52179f66a64821b3f2b7168e26937b400
     password: str
     role:str = ""
 
@@ -79,7 +90,10 @@ class Todo(SQLModel, table=True):
     
     def get_cat_list(self):
         return ', '.join([category.text for category in self.categories])
+<<<<<<< HEAD
     
 
 
 
+=======
+>>>>>>> 8431d0e52179f66a64821b3f2b7168e26937b400
